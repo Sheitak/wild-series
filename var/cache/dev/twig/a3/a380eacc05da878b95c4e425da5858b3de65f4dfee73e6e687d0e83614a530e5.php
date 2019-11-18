@@ -61,7 +61,7 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
 
         // line 2
         echo "<a href=\"wild/index.html.twig\">
-    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-secondary\">
         <a class=\"navbar-brand\" href=\"#\">Navbar</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -119,7 +119,7 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
     {
         return new Source("{% block nav %}
 <a href=\"wild/index.html.twig\">
-    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-secondary\">
         <a class=\"navbar-brand\" href=\"#\">Navbar</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>

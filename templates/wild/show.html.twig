@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block show %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>
+        <a href="{{ path('wild_show', {'slug':'ma-superbe-serie'}) }}">Voici la série Ma Superbe Série.</a>
+        <br>
+        <a href="{{ path('wild_show', {'slug':'house-of-cards'}) }}">Voici la série House of Cards.</a>
+        <h1>{{ slug }}.</h1>
+    </body>
+</html>
+{% endblock %}
