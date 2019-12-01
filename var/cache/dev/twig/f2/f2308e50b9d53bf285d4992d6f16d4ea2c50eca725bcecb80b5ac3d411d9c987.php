@@ -25,7 +25,8 @@ class __TwigTemplate_96f760f4fc4cff257319642e6f3324bfa11dedf6b972a969ac965e22093
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'show' => [$this, 'block_show'],
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -54,39 +55,64 @@ class __TwigTemplate_96f760f4fc4cff257319642e6f3324bfa11dedf6b972a969ac965e22093
 
     }
 
-    // line 3
-    public function block_show($context, array $blocks = [])
+    // line 2
+    public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "show"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "show"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 4
-        echo "<!doctype html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <title>Document</title>
-</head>
-    <body>
-        <a href=\"";
-        // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "ma-superbe-serie"]);
-        echo "\">Voici la série Ma Superbe Série.</a>
-        <br>
-        <a href=\"";
+        echo twig_escape_filter($this->env, (isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 2, $this->source); })()), "html", null, true);
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 4
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 5
+        echo "    <div class=\"media\">
+        <img class=\"align-self-start mr-3\" src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 6, $this->source); })()), "poster", [], "any", false, false, false, 6), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
+        echo " poster\">
+        <div class=\"media-body\">
+            <h1 class=\"mt-0\">";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 8, $this->source); })()), "title", [], "any", false, false, false, 8), "html", null, true);
+        echo "</h1>
+            <p>";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 9, $this->source); })()), "summary", [], "any", false, false, false, 9), "html", null, true);
+        echo "</p>
+            <p>Categorie : ";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 10, $this->source); })()), "category", [], "any", false, false, false, 10), "name", [], "any", false, false, false, 10), "html", null, true);
+        echo "</p>
+        </div>
+    </div>
+    <a href=\"";
         // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "house-of-cards"]);
-        echo "\">Voici la série House of Cards.</a>
-        <h1>";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["slug"]) || array_key_exists("slug", $context) ? $context["slug"] : (function () { throw new RuntimeError('Variable "slug" does not exist.', 14, $this->source); })()), "html", null, true);
-        echo ".</h1>
-    </body>
-</html>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_index");
+        echo "\">
+        Retour à l'accueil
+    </a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,27 +134,27 @@ class __TwigTemplate_96f760f4fc4cff257319642e6f3324bfa11dedf6b972a969ac965e22093
 
     public function getDebugInfo()
     {
-        return array (  86 => 14,  82 => 13,  77 => 11,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  112 => 13,  106 => 10,  102 => 9,  98 => 8,  91 => 6,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+{% block title %}{{ slug }}{% endblock %}
 
-{% block show %}
-<!doctype html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <title>Document</title>
-</head>
-    <body>
-        <a href=\"{{ path('wild_show', {'slug':'ma-superbe-serie'}) }}\">Voici la série Ma Superbe Série.</a>
-        <br>
-        <a href=\"{{ path('wild_show', {'slug':'house-of-cards'}) }}\">Voici la série House of Cards.</a>
-        <h1>{{ slug }}.</h1>
-    </body>
-</html>
-{% endblock %}", "wild/show.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/show.html.twig");
+{% block body %}
+    <div class=\"media\">
+        <img class=\"align-self-start mr-3\" src=\"{{program.poster}}\" alt=\"{{ program.title }} poster\">
+        <div class=\"media-body\">
+            <h1 class=\"mt-0\">{{ program.title }}</h1>
+            <p>{{ program.summary }}</p>
+            <p>Categorie : {{ program.category.name }}</p>
+        </div>
+    </div>
+    <a href=\"{{ path('wild_index') }}\">
+        Retour à l'accueil
+    </a>
+{% endblock %}
+", "wild/show.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/show.html.twig");
     }
 }

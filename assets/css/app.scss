@@ -4,6 +4,22 @@ body {
     background-color: lightpink;
 }
 
+h2 {
+    font-family: 'Galaxie', Helvetica, Roboto, Arial, sans-serif;
+    color: #0f6674;
+}
+
+.progsize {
+    width: 250px;
+    height: 300px;
+}
+
+.retour {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
 $theme-colors: (
         "primary": #61affc,
         "secondary": #fcb161

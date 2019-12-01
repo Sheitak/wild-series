@@ -60,33 +60,40 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "nav"));
 
         // line 2
-        echo "<a href=\"wild/index.html.twig\">
-    <nav class=\"navbar navbar-expand-lg navbar-light bg-secondary\">
-        <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+        echo "    <nav class=\"navbar navbar-expand-lg navbar-light bg-secondary\">
+        <a class=\"navbar-brand\" href=\"/\">Acceuil</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"#\">Tendance<span class=\"sr-only\">(current)</span></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Link</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_index");
+        echo "\">Séries</a>
                 </li>
                 <li class=\"nav-item dropdown\">
                     <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Dropdown
+                        Catégories
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"#\">Action</a>
-                        <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                        <a class=\"dropdown-item\" href=\"category/horreur\">Horreur</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+                        <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Disabled</a>
+                    <a class=\"nav-link disabled\" href=\"#\">Saisons</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link disabled\" href=\"#\">Années</a>
                 </li>
             </ul>
             <form class=\"form-inline my-2 my-lg-0\">
@@ -95,7 +102,6 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
             </form>
         </div>
     </nav>
-</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -112,39 +118,43 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
 
     public function getDebugInfo()
     {
-        return array (  63 => 2,  44 => 1,);
+        return array (  76 => 13,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% block nav %}
-<a href=\"wild/index.html.twig\">
     <nav class=\"navbar navbar-expand-lg navbar-light bg-secondary\">
-        <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+        <a class=\"navbar-brand\" href=\"/\">Acceuil</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"#\">Tendance<span class=\"sr-only\">(current)</span></a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Link</a>
+                    <a class=\"nav-link\" href=\"{{ path('wild_index') }}\">Séries</a>
                 </li>
                 <li class=\"nav-item dropdown\">
                     <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Dropdown
+                        Catégories
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"#\">Action</a>
-                        <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                        <a class=\"dropdown-item\" href=\"category/horreur\">Horreur</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+                        <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Disabled</a>
+                    <a class=\"nav-link disabled\" href=\"#\">Saisons</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link disabled\" href=\"#\">Années</a>
                 </li>
             </ul>
             <form class=\"form-inline my-2 my-lg-0\">
@@ -153,7 +163,6 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
             </form>
         </div>
     </nav>
-</a>
 {% endblock %}", "/wild/navbar.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/navbar.html.twig");
     }
 }
