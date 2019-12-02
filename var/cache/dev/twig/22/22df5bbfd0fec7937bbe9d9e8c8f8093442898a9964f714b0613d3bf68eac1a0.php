@@ -66,28 +66,28 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
 
         // line 4
         echo "    <section class=\"container-fluid media\">
-            ";
+            <h2 class=\"mt-0\">Categorie : ";
         // line 5
+        echo twig_escape_filter($this->env, (isset($context["categoryName"]) || array_key_exists("categoryName", $context) ? $context["categoryName"] : (function () { throw new RuntimeError('Variable "categoryName" does not exist.', 5, $this->source); })()), "html", null, true);
+        echo "</h2>
+            ";
+        // line 6
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 5, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["programs"]) || array_key_exists("programs", $context) ? $context["programs"] : (function () { throw new RuntimeError('Variable "programs" does not exist.', 6, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["program"]) {
-            // line 6
+            // line 7
             echo "            <div class=\"mt-5 px-3\">
                 <div class=\"card mb-3 pt-3 col-xl-8 mx-auto\">
                     <img class=\"align-self-start card-img-top mb-3\" src=\"";
-            // line 8
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "poster", [], "any", false, false, false, 8), "html", null, true);
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "poster", [], "any", false, false, false, 9), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 8), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9), "html", null, true);
             echo " poster\">
                     <div class=\"container-fluid\">
                         <h2 class=\"mt-0\">";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 10), "html", null, true);
-            echo "</h2>
-                        <h2 class=\"mt-0\">Categorie : ";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["program"], "category", [], "any", false, false, false, 11), "name", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 11), "html", null, true);
             echo "</h2>
                         <p class=\"progsize\">";
             // line 12
@@ -130,7 +130,7 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
 
     public function getDebugInfo()
     {
-        return array (  108 => 18,  105 => 17,  94 => 12,  90 => 11,  86 => 10,  79 => 8,  75 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  108 => 18,  105 => 17,  94 => 12,  90 => 11,  83 => 9,  79 => 7,  75 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -139,13 +139,13 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
 
 {% block category %}
     <section class=\"container-fluid media\">
-            {% for program in category %}
+            <h2 class=\"mt-0\">Categorie : {{ categoryName }}</h2>
+            {% for program in programs %}
             <div class=\"mt-5 px-3\">
                 <div class=\"card mb-3 pt-3 col-xl-8 mx-auto\">
                     <img class=\"align-self-start card-img-top mb-3\" src=\"{{program.poster}}\" alt=\"{{ program.title }} poster\">
                     <div class=\"container-fluid\">
                         <h2 class=\"mt-0\">{{ program.title }}</h2>
-                        <h2 class=\"mt-0\">Categorie : {{ program.category.name }}</h2>
                         <p class=\"progsize\">{{ program.summary }}</p>
                     </div>
                 </div>

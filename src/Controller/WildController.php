@@ -2,11 +2,16 @@
 // src/Controller/WildController.php
 namespace App\Controller;
 
+use App\Repository\CategoryRepository;
+use App\Repository\ProgramRepository;
+use App\Repository\SeasonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Program;
+use App\Entity\Episodes;
+use App\Entity\Season;
 
 /**
  * @Route("/wild", name="wild_")
@@ -65,21 +70,65 @@ Class WildController extends AbstractController
         ]);
     }
 
-    /**
+     /**
      * @param string $categoryName The category
-     * @Route("/category/{categoryName}", name="show_category")
+     * @Route("/category/{categoryName<^[a-z]+$>}", defaults={"categoryName" = null}, name="show_category")
      * @return Response
      */
-     public function showByCategory(string $categoryName):Response
+    public function showByCategory(string $categoryName, CategoryRepository $categoryRepository, ProgramRepository $programRepository) : Response
+    {
+        $category = $categoryRepository->findBy(
+            ['name' => $categoryName]
+        );
+
+        $programs = $programRepository->findBy(
+                ['category' => $category],
+                ['id' => 'DESC'],
+                3
+            );
+
+        return $this->render('wild/category.html.twig', [
+            'categoryName' => ucwords($categoryName),
+            'programs' => $programs
+        ]);
+    }
+
+     /**
+     * @param string $slug The slugger
+     * @Route("/series/{programName}", name="series")
+     * @return Response
+     */
+     public function showByProgram(?string $slug, SeasonRepository $seasonRepository):Response
      {
-         $categoryName = $this->getDoctrine()
-             ->getRepository(Program::class)
-             ->findBy(array(), array('id' => 'desc'),
-             3,
-             0);
+         $season = $seasonRepository->findAll(
+             ['name' => $categoryName]
+         );
+
+         $programs = $programRepository->findBy(
+             ['category' => $category],
+             ['id' => 'DESC'],
+             3
+         );
 
          return $this->render('wild/category.html.twig', [
-             'category' => $categoryName,
+             'categoryName' => ucwords($categoryName),
+             'programs' => $programs
+         ]);
+     }
+
+     /**
+     * @param int $id The id of season
+     * @Route("/series/{programName}", name="series")
+     * @return Response
+     */
+     public function showBySeason(int $id) {
+         $id = $this->getDoctrine()
+             ->getRepository(Episodes::class)
+             ->getEpisodes()
+             ->findAll();
+
+         return $this->render('wild/series.html.twig', [
+             'seasons' => $id,
          ]);
      }
 }

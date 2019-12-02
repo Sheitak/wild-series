@@ -89,6 +89,19 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
                     </div>
                 </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Séries
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"series/the-walking-dead\">The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
+                    </div>
+                </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link disabled\" href=\"#\">Saisons</a>
                 </li>
@@ -144,6 +157,19 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"category/horreur\">Horreur</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
+                    </div>
+                </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Séries
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"series/the-walking-dead\">The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <div class=\"dropdown-divider\"></div>
