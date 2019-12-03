@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Episodes{% endblock %}
+
+{% block episodes %}
+    <section class="container-fluid media">
+        <h2 class="mt-0">Saison N°{{ season.number }} de {{ program.title }}</h2>
+        <div class="card mb-2 pt-2 col-xl-2 mx-auto">
+        <h4 class="mt-0">{{ season.description }}</h4>
+        </div>
+        {% for episode in episodes %}
+            <div class="mt-5 px-3">
+                <div class="card mb-3 pt-3 col-xl-12 mx-auto">
+                    <div class="container-fluid">
+                        <h2 class="mt-0" href="#">{{ episode.number }} - {{ episode.title }}</h2>
+                        <p class="progsize">{{ episode.summary }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    <a href="{{ path('wild_index') }}" class="retour">
+        Retour à l'accueil
+    </a>
+{% endblock %}

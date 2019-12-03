@@ -81,7 +81,7 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         Catégories
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"category/horreur\">Horreur</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/horreur\">Horreur</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
@@ -94,10 +94,13 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         Séries
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"series/the-walking-dead\">The Walking Dead</a>
-                        <a class=\"dropdown-item\" href=\"series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/walking-dead\">The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/american-horror-story\">American Horror Story</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/love-death-and-robots\">Love Death And Robots</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/penny-dreadful\">Penny Dreadful</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/fear-the-walking-dead\">Fear The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"#\">????</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
                     </div>
@@ -155,7 +158,7 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         Catégories
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"category/horreur\">Horreur</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/horreur\">Horreur</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
@@ -168,10 +171,13 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         Séries
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"series/the-walking-dead\">The Walking Dead</a>
-                        <a class=\"dropdown-item\" href=\"series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/walking-dead\">The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/the-haunting-of-hill-house\">The Haunting Of Hill House</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/american-horror-story\">American Horror Story</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/love-death-and-robots\">Love Death And Robots</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/penny-dreadful\">Penny Dreadful</a>
+                        <a class=\"dropdown-item\" href=\"/wild/series/fear-the-walking-dead\">Fear The Walking Dead</a>
+                        <a class=\"dropdown-item\" href=\"#\">????</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"#\">Vous n'avez pas votre catégorie favorite ?</a>
                     </div>
