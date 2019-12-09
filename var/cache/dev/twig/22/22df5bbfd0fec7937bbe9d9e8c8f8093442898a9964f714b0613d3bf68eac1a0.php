@@ -25,7 +25,7 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'category' => [$this, 'block_category'],
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -55,14 +55,14 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
     }
 
     // line 3
-    public function block_category($context, array $blocks = [])
+    public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "category"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "category"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <section class=\"container-fluid media\">
@@ -137,7 +137,7 @@ class __TwigTemplate_299094465aa45d3e6cff44c5e86d9aa374c74497123a56b66a833695538
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block category %}
+{% block body %}
     <section class=\"container-fluid media\">
             <h2 class=\"mt-0\">Categorie : {{ categoryName }}</h2>
             {% for program in programs %}
