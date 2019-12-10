@@ -61,7 +61,7 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
         $this->displayBlock('button_row', $context, $blocks);
         // line 29
         $this->displayBlock('hidden_row', $context, $blocks);
-        // line 37
+        // line 38
         $this->displayBlock('form_widget_compound', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -89,7 +89,17 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
             $context["widget_attr"] = ["attr" => ["aria-describedby" => ((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 6, $this->source); })()) . "_help")]];
         }
         // line 8
-        echo "<tr>
+        echo "<tr";
+        $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = ["attr" => (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 8, $this->source); })())];
+        if (!twig_test_iterable($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 8, $this->getSourceContext());
+        }
+        $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_to_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <td>";
         // line 10
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'label');
@@ -124,7 +134,17 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "button_row"));
 
         // line 21
-        echo "<tr>
+        echo "<tr";
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = ["attr" => (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 21, $this->source); })())];
+        if (!twig_test_iterable($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 21, $this->getSourceContext());
+        }
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_to_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <td></td>
         <td>";
         // line 24
@@ -151,11 +171,23 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "hidden_row"));
 
         // line 30
-        echo "<tr style=\"display: none\">
+        $context["style"] = ((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "style", [], "any", true, true, false, 30)) ? ((twig_get_attribute($this->env, $this->source, (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 30, $this->source); })()), "style", [], "any", false, false, false, 30) . (((twig_last($this->env, twig_trim_filter(twig_get_attribute($this->env, $this->source, (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 30, $this->source); })()), "style", [], "any", false, false, false, 30))) != ";")) ? ("; ") : ("")))) : (""));
+        // line 31
+        echo "<tr";
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 31, $this->source); })()), ["style" => twig_trim_filter(((isset($context["style"]) || array_key_exists("style", $context) ? $context["style"] : (function () { throw new RuntimeError('Variable "style" does not exist.', 31, $this->source); })()) . " display: none"))])];
+        if (!twig_test_iterable($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 31, $this->getSourceContext());
+        }
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_to_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <td colspan=\"2\">";
-        // line 32
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), 'widget');
         // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 33, $this->source); })()), 'widget');
+        // line 34
         echo "</td>
     </tr>";
         
@@ -166,7 +198,7 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
 
     }
 
-    // line 37
+    // line 38
     public function block_form_widget_compound($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,26 +208,26 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form_widget_compound"));
 
-        // line 38
+        // line 39
         echo "<table ";
         $this->displayBlock("widget_container_attributes", $context, $blocks);
         echo ">";
-        // line 39
-        if ((Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })())) && (twig_length_filter($this->env, (isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 39, $this->source); })())) > 0))) {
-            // line 40
+        // line 40
+        if ((Symfony\Bridge\Twig\Extension\twig_is_root_form((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })())) && (twig_length_filter($this->env, (isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 40, $this->source); })())) > 0))) {
+            // line 41
             echo "<tr>
             <td colspan=\"2\">";
-            // line 42
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 42, $this->source); })()), 'errors');
             // line 43
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), 'errors');
+            // line 44
             echo "</td>
         </tr>";
         }
-        // line 46
-        $this->displayBlock("form_rows", $context, $blocks);
         // line 47
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), 'rest');
+        $this->displayBlock("form_rows", $context, $blocks);
         // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 48, $this->source); })()), 'rest');
+        // line 49
         echo "</table>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -212,7 +244,7 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
 
     public function getDebugInfo()
     {
-        return array (  199 => 48,  197 => 47,  195 => 46,  191 => 43,  189 => 42,  186 => 40,  184 => 39,  180 => 38,  170 => 37,  159 => 33,  157 => 32,  154 => 30,  144 => 29,  133 => 25,  131 => 24,  127 => 21,  117 => 20,  106 => 16,  104 => 15,  102 => 14,  100 => 13,  97 => 11,  95 => 10,  92 => 8,  89 => 6,  87 => 5,  85 => 4,  75 => 3,  65 => 37,  63 => 29,  61 => 20,  59 => 3,  30 => 1,);
+        return array (  231 => 49,  229 => 48,  227 => 47,  223 => 44,  221 => 43,  218 => 41,  216 => 40,  212 => 39,  202 => 38,  191 => 34,  189 => 33,  176 => 31,  174 => 30,  164 => 29,  153 => 25,  151 => 24,  137 => 21,  127 => 20,  116 => 16,  114 => 15,  112 => 14,  110 => 13,  107 => 11,  105 => 10,  92 => 8,  89 => 6,  87 => 5,  85 => 4,  75 => 3,  65 => 38,  63 => 29,  61 => 20,  59 => 3,  30 => 1,);
     }
 
     public function getSourceContext()
@@ -224,7 +256,7 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~\"_help\"}} -%}
     {%- endif -%}
-    <tr>
+    <tr{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         <td>
             {{- form_label(form) -}}
         </td>
@@ -237,7 +269,7 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
 {%- endblock form_row -%}
 
 {%- block button_row -%}
-    <tr>
+    <tr{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         <td></td>
         <td>
             {{- form_widget(form) -}}
@@ -246,7 +278,8 @@ class __TwigTemplate_1afd686cd1b0017bd58b3e10f51069983efc5fe5a30a499036c32aa42d4
 {%- endblock button_row -%}
 
 {%- block hidden_row -%}
-    <tr style=\"display: none\">
+    {%- set style = row_attr.style is defined ? (row_attr.style ~ (row_attr.style|trim|last != ';' ? '; ')) : '' -%}
+    <tr{% with {attr: row_attr|merge({style: (style ~ ' display: none')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <td colspan=\"2\">
             {{- form_widget(form) -}}
         </td>

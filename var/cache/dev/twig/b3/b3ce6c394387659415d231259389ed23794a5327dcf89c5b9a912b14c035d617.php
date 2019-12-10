@@ -1398,8 +1398,8 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
             $context["widget_attr"] = ["attr" => ["aria-describedby" => ((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 326, $this->source); })()) . "_help")]];
         }
         // line 328
-        echo "<div ";
-        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = ["attr" => (((isset($context["row_attr"]) || array_key_exists("row_attr", $context))) ? (_twig_default_filter((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 328, $this->source); })()), [])) : ([]))];
+        echo "<div";
+        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = ["attr" => (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 328, $this->source); })())];
         if (!twig_test_iterable($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002)) {
             throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 328, $this->getSourceContext());
         }
@@ -1438,8 +1438,8 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "button_row"));
 
         // line 337
-        echo "<div ";
-        $__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 = ["attr" => (((isset($context["row_attr"]) || array_key_exists("row_attr", $context))) ? (_twig_default_filter((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 337, $this->source); })()), [])) : ([]))];
+        echo "<div";
+        $__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4 = ["attr" => (isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 337, $this->source); })())];
         if (!twig_test_iterable($__internal_d7fc55f1a54b629533d60b43063289db62e68921ee7a5f8de562bd9d4a2b7ad4)) {
             throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 337, $this->getSourceContext());
         }
@@ -2183,7 +2183,7 @@ $context["attrvalue"] === false)) {
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~\"_help\"}} -%}
     {%- endif -%}
-    <div {% with {attr: row_attr|default({})} %}{{ block('attributes') }}{% endwith %}>
+    <div{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         {{- form_label(form) -}}
         {{- form_errors(form) -}}
         {{- form_widget(form, widget_attr) -}}
@@ -2192,7 +2192,7 @@ $context["attrvalue"] === false)) {
 {%- endblock form_row -%}
 
 {%- block button_row -%}
-    <div {% with {attr: row_attr|default({})} %}{{ block('attributes') }}{% endwith %}>
+    <div{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         {{- form_widget(form) -}}
     </div>
 {%- endblock button_row -%}

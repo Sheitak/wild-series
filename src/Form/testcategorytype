@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class CategoryType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('Name', CategoryType::class);
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Category::class,
+        ]);
+    }
+}
+
+
+//WILD CONTROLLER
+
+        $form = $this->createForm(ProgramSearchType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted())
+        {
+            $data = $form->getData();
+            // $data contains $_POST data
+            // TODO : Faire une recherche dans la BDD avec les infos de $data…
+        }
+
+$category = new Category();
+$form = $this->createForm(
+    CategoryType::class,
+    $category
+);

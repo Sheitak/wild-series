@@ -1,5 +1,5 @@
 <?php
-// src/Controller/WildController.php
+
 namespace App\Controller;
 
 use App\Repository\CategoryRepository;
@@ -9,11 +9,13 @@ use App\Repository\SeasonRepository;
 use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Program;
 use App\Entity\Episodes;
 use App\Entity\Season;
+use App\Form\ProgramSearchType;
 
 /**
  * @Route("/wild", name="wild_")
@@ -26,7 +28,7 @@ Class WildController extends AbstractController
      * @Route("/", name="wild_index")
      * @return Response A response instance
      */
-    public function index(): Response
+    public function index(Request $request): Response
     {
         $programs = $this->getDoctrine()
             ->getRepository(Program::class)
@@ -40,12 +42,24 @@ Class WildController extends AbstractController
             );
         }
 
+        $form = $this->createForm(ProgramSearchType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted())
+        {
+            $data = $form->getData();
+            // $data contains $_POST data
+            // TODO : Faire une recherche dans la BDD avec les infos de $data…
+        }
+
         return $this->render
         (
-            'wild/index.html.twig',
-            ['programs' => $programs]
-        );
+        'wild/index.html.twig', [
+            'programs' => $programs,
+            'form' => $form->createView()
+        ]);
     }
+
     /**
      * Getting a program with a formatted slug for title
      * @param string $slug The slugger

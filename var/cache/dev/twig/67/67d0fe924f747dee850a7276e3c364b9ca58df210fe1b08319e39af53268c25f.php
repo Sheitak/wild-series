@@ -158,6 +158,19 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
         echo "\">
         Testing index() method from WildController to view all programs.
     </a>
+    ";
+        // line 25
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_start');
+        echo "
+        ";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "searchField", [], "any", false, false, false, 26), 'row');
+        echo "
+        <button type=\"submit\" name=\"btnSearch\">Rechercher</button>
+    ";
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -179,7 +192,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
 
     public function getDebugInfo()
     {
-        return array (  157 => 22,  150 => 18,  143 => 15,  136 => 13,  120 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  172 => 28,  167 => 26,  163 => 25,  157 => 22,  150 => 18,  143 => 15,  136 => 13,  120 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -208,6 +221,10 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <a href=\"{{ path('wild_index') }}\">
         Testing index() method from WildController to view all programs.
     </a>
+    {{ form_start(form) }}
+        {{ form_row(form.searchField) }}
+        <button type=\"submit\" name=\"btnSearch\">Rechercher</button>
+    {{ form_end(form) }}
 {% endblock %}
 ", "wild/index.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/index.html.twig");
     }

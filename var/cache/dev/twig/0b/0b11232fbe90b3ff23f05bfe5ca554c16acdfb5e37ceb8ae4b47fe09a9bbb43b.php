@@ -203,11 +203,17 @@ class __TwigTemplate_a63db469e69e18415482f66cf5c75f82ac07b190f735228774e5a67f000
             $context["widget_attr"] = ["attr" => ["aria-describedby" => ((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 28, $this->source); })()) . "_help")]];
         }
         // line 30
-        echo "<div class=\"form-group";
-        if ((( !(isset($context["compound"]) || array_key_exists("compound", $context) ? $context["compound"] : (function () { throw new RuntimeError('Variable "compound" does not exist.', 30, $this->source); })()) || (((isset($context["force_error"]) || array_key_exists("force_error", $context))) ? (_twig_default_filter((isset($context["force_error"]) || array_key_exists("force_error", $context) ? $context["force_error"] : (function () { throw new RuntimeError('Variable "force_error" does not exist.', 30, $this->source); })()), false)) : (false))) &&  !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 30, $this->source); })()))) {
-            echo " has-error";
+        echo "<div";
+        $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 30, $this->source); })()), ["class" => twig_trim_filter(((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 30)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 30), "")) : ("")) . " form-group") . (((( !(isset($context["compound"]) || array_key_exists("compound", $context) ? $context["compound"] : (function () { throw new RuntimeError('Variable "compound" does not exist.', 30, $this->source); })()) || (((isset($context["force_error"]) || array_key_exists("force_error", $context))) ? (_twig_default_filter((isset($context["force_error"]) || array_key_exists("force_error", $context) ? $context["force_error"] : (function () { throw new RuntimeError('Variable "force_error" does not exist.', 30, $this->source); })()), false)) : (false))) &&  !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 30, $this->source); })()))) ? (" has-error") : (""))))])];
+        if (!twig_test_iterable($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 30, $this->getSourceContext());
         }
-        echo "\">";
+        $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4 = twig_to_array($__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_f607aeef2c31a95a7bf963452dff024ffaeb6aafbe4603f9ca3bec57be8633f4));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">";
         // line 31
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), 'label');
         // line 32
@@ -244,7 +250,17 @@ class __TwigTemplate_a63db469e69e18415482f66cf5c75f82ac07b190f735228774e5a67f000
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "submit_row"));
 
         // line 41
-        echo "<div class=\"form-group\">";
+        echo "<div";
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 41, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 41)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 41), "")) : ("")) . " form-group"))])];
+        if (!twig_test_iterable($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 41, $this->getSourceContext());
+        }
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_to_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">";
         // line 42
         echo "<div class=\"";
         $this->displayBlock("form_label_class", $context, $blocks);
@@ -278,7 +294,17 @@ class __TwigTemplate_a63db469e69e18415482f66cf5c75f82ac07b190f735228774e5a67f000
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "reset_row"));
 
         // line 50
-        echo "<div class=\"form-group\">";
+        echo "<div";
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 50, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 50)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 50), "")) : ("")) . " form-group"))])];
+        if (!twig_test_iterable($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 50, $this->getSourceContext());
+        }
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_to_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">";
         // line 51
         echo "<div class=\"";
         $this->displayBlock("form_label_class", $context, $blocks);
@@ -332,11 +358,17 @@ class __TwigTemplate_a63db469e69e18415482f66cf5c75f82ac07b190f735228774e5a67f000
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "checkbox_row"));
 
         // line 63
-        echo "<div class=\"form-group";
-        if ( !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 63, $this->source); })())) {
-            echo " has-error";
+        echo "<div";
+        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 63, $this->source); })()), ["class" => twig_trim_filter(((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 63)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 63), "")) : ("")) . " form-group") . (( !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 63, $this->source); })())) ? (" has-error") : (""))))])];
+        if (!twig_test_iterable($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 63, $this->getSourceContext());
         }
-        echo "\">";
+        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = twig_to_array($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">";
         // line 64
         echo "<div class=\"";
         $this->displayBlock("form_label_class", $context, $blocks);
@@ -368,7 +400,7 @@ class __TwigTemplate_a63db469e69e18415482f66cf5c75f82ac07b190f735228774e5a67f000
 
     public function getDebugInfo()
     {
-        return array (  355 => 69,  353 => 68,  351 => 67,  349 => 66,  345 => 65,  341 => 64,  335 => 63,  325 => 62,  315 => 59,  305 => 58,  295 => 55,  293 => 54,  291 => 53,  287 => 52,  283 => 51,  281 => 50,  271 => 49,  261 => 46,  259 => 45,  257 => 44,  253 => 43,  249 => 42,  247 => 41,  237 => 40,  227 => 37,  224 => 36,  222 => 35,  220 => 34,  218 => 33,  214 => 32,  212 => 31,  206 => 30,  203 => 28,  201 => 27,  199 => 26,  189 => 25,  179 => 20,  169 => 19,  158 => 15,  156 => 14,  151 => 12,  149 => 11,  139 => 10,  129 => 5,  127 => 4,  117 => 3,  107 => 62,  104 => 61,  102 => 58,  99 => 57,  97 => 49,  94 => 48,  92 => 40,  89 => 39,  87 => 25,  84 => 24,  81 => 22,  79 => 19,  76 => 18,  74 => 10,  71 => 9,  68 => 7,  66 => 3,  63 => 2,  30 => 1,);
+        return array (  387 => 69,  385 => 68,  383 => 67,  381 => 66,  377 => 65,  373 => 64,  361 => 63,  351 => 62,  341 => 59,  331 => 58,  321 => 55,  319 => 54,  317 => 53,  313 => 52,  309 => 51,  297 => 50,  287 => 49,  277 => 46,  275 => 45,  273 => 44,  269 => 43,  265 => 42,  253 => 41,  243 => 40,  233 => 37,  230 => 36,  228 => 35,  226 => 34,  224 => 33,  220 => 32,  218 => 31,  206 => 30,  203 => 28,  201 => 27,  199 => 26,  189 => 25,  179 => 20,  169 => 19,  158 => 15,  156 => 14,  151 => 12,  149 => 11,  139 => 10,  129 => 5,  127 => 4,  117 => 3,  107 => 62,  104 => 61,  102 => 58,  99 => 57,  97 => 49,  94 => 48,  92 => 40,  89 => 39,  87 => 25,  84 => 24,  81 => 22,  79 => 19,  76 => 18,  74 => 10,  71 => 9,  68 => 7,  66 => 3,  63 => 2,  30 => 1,);
     }
 
     public function getSourceContext()
@@ -402,7 +434,7 @@ col-sm-2
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~\"_help\"}} -%}
     {%- endif -%}
-    <div class=\"form-group{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %}\">
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group' ~ ((not compound or force_error|default(false)) and not valid ? ' has-error'))|trim})} %}{{ block('attributes') }}{% endwith %}>
         {{- form_label(form) -}}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form, widget_attr) -}}
@@ -413,7 +445,7 @@ col-sm-2
 {%- endblock form_row %}
 
 {% block submit_row -%}
-    <div class=\"form-group\">{#--#}
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group')|trim})} %}{{ block('attributes') }}{% endwith %}>{#--#}
         <div class=\"{{ block('form_label_class') }}\"></div>{#--#}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form) -}}
@@ -422,7 +454,7 @@ col-sm-2
 {%- endblock submit_row %}
 
 {% block reset_row -%}
-    <div class=\"form-group\">{#--#}
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group')|trim})} %}{{ block('attributes') }}{% endwith %}>{#--#}
         <div class=\"{{ block('form_label_class') }}\"></div>{#--#}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form) -}}
@@ -435,7 +467,7 @@ col-sm-10
 {%- endblock form_group_class %}
 
 {% block checkbox_row -%}
-    <div class=\"form-group{% if not valid %} has-error{% endif %}\">{#--#}
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' form-group' ~ (not valid ? ' has-error'))|trim})} %}{{ block('attributes') }}{% endwith %}>{#--#}
         <div class=\"{{ block('form_label_class') }}\"></div>{#--#}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form) -}}

@@ -888,7 +888,17 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
             $context["widget_attr"] = ["attr" => ["aria-describedby" => ((isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 278, $this->source); })()) . "_help")]];
         }
         // line 280
-        echo "<div class=\"row\">
+        echo "<div";
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 280, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 280)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 280), "")) : ("")) . " row"))])];
+        if (!twig_test_iterable($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 280, $this->getSourceContext());
+        }
+        $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144 = twig_to_array($__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_62824350bc4502ee19dbc2e99fc6bdd3bd90e7d8dd6e72f42c35efd048542144));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <div class=\"large-12 columns";
         // line 281
         if ((( !(isset($context["compound"]) || array_key_exists("compound", $context) ? $context["compound"] : (function () { throw new RuntimeError('Variable "compound" does not exist.', 281, $this->source); })()) || (((isset($context["force_error"]) || array_key_exists("force_error", $context))) ? (_twig_default_filter((isset($context["force_error"]) || array_key_exists("force_error", $context) ? $context["force_error"] : (function () { throw new RuntimeError('Variable "force_error" does not exist.', 281, $this->source); })()), false)) : (false))) &&  !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 281, $this->source); })()))) {
@@ -1017,7 +1027,17 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "checkbox_row"));
 
         // line 311
-        echo "<div class=\"row\">
+        echo "<div";
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 311, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 311)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 311), "")) : ("")) . " row"))])];
+        if (!twig_test_iterable($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 311, $this->getSourceContext());
+        }
+        $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b = twig_to_array($__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_1cfccaec8dd2e8578ccb026fbe7f2e7e29ac2ed5deb976639c5fc99a6ea8583b));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <div class=\"large-12 columns";
         // line 312
         if ( !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 312, $this->source); })())) {
@@ -1053,7 +1073,17 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "radio_row"));
 
         // line 320
-        echo "<div class=\"row\">
+        echo "<div";
+        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = ["attr" => twig_array_merge((isset($context["row_attr"]) || array_key_exists("row_attr", $context) ? $context["row_attr"] : (function () { throw new RuntimeError('Variable "row_attr" does not exist.', 320, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", true, true, false, 320)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["row_attr"] ?? null), "class", [], "any", false, false, false, 320), "")) : ("")) . " row"))])];
+        if (!twig_test_iterable($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002)) {
+            throw new RuntimeError('Variables passed to the "with" tag must be a hash.', 320, $this->getSourceContext());
+        }
+        $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002 = twig_to_array($__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002);
+        $context['_parent'] = $context;
+        $context = $this->env->mergeGlobals(array_merge($context, $__internal_68aa442c1d43d3410ea8f958ba9090f3eaa9a76f8de8fc9be4d6c7389ba28002));
+        $this->displayBlock("attributes", $context, $blocks);
+        $context = $context['_parent'];
+        echo ">
         <div class=\"large-12 columns";
         // line 321
         if ( !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new RuntimeError('Variable "valid" does not exist.', 321, $this->source); })())) {
@@ -1160,7 +1190,7 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 
     public function getDebugInfo()
     {
-        return array (  1137 => 337,  1121 => 335,  1117 => 334,  1100 => 333,  1094 => 332,  1092 => 331,  1082 => 330,  1069 => 323,  1065 => 322,  1059 => 321,  1056 => 320,  1046 => 319,  1033 => 314,  1029 => 313,  1023 => 312,  1020 => 311,  1010 => 310,  999 => 307,  997 => 306,  987 => 305,  976 => 302,  974 => 301,  964 => 300,  953 => 297,  951 => 296,  941 => 295,  930 => 292,  928 => 291,  918 => 290,  907 => 286,  905 => 285,  903 => 284,  901 => 283,  899 => 282,  894 => 281,  891 => 280,  888 => 278,  886 => 277,  884 => 276,  874 => 275,  862 => 269,  858 => 268,  845 => 267,  841 => 264,  838 => 261,  837 => 260,  836 => 259,  834 => 258,  831 => 257,  828 => 256,  825 => 255,  822 => 254,  819 => 253,  817 => 252,  814 => 251,  811 => 250,  808 => 249,  806 => 248,  796 => 247,  786 => 244,  776 => 243,  766 => 240,  756 => 239,  746 => 236,  743 => 235,  741 => 234,  738 => 233,  736 => 232,  734 => 231,  724 => 230,  714 => 227,  711 => 226,  709 => 225,  707 => 224,  697 => 223,  683 => 216,  680 => 215,  677 => 214,  675 => 213,  672 => 212,  666 => 210,  663 => 209,  661 => 208,  651 => 207,  637 => 202,  634 => 201,  628 => 199,  625 => 198,  622 => 197,  620 => 196,  617 => 195,  615 => 194,  605 => 193,  593 => 189,  586 => 187,  584 => 186,  582 => 185,  578 => 184,  573 => 183,  569 => 181,  562 => 179,  560 => 178,  558 => 177,  554 => 176,  551 => 175,  549 => 174,  539 => 173,  529 => 170,  527 => 169,  525 => 168,  519 => 165,  517 => 164,  515 => 163,  513 => 162,  511 => 161,  502 => 159,  500 => 158,  492 => 157,  489 => 155,  487 => 154,  484 => 153,  481 => 152,  479 => 151,  477 => 150,  474 => 149,  471 => 148,  469 => 147,  467 => 146,  457 => 145,  446 => 142,  442 => 140,  439 => 139,  431 => 134,  420 => 127,  412 => 122,  399 => 112,  388 => 105,  385 => 104,  379 => 102,  376 => 101,  373 => 100,  370 => 98,  368 => 97,  358 => 96,  347 => 93,  343 => 91,  341 => 90,  339 => 88,  338 => 87,  337 => 86,  336 => 85,  330 => 83,  327 => 82,  324 => 81,  321 => 79,  319 => 78,  309 => 77,  295 => 72,  291 => 71,  287 => 70,  282 => 68,  278 => 67,  275 => 66,  272 => 65,  269 => 63,  267 => 62,  257 => 61,  247 => 58,  244 => 56,  242 => 55,  240 => 54,  235 => 51,  231 => 49,  229 => 48,  227 => 47,  225 => 46,  223 => 45,  213 => 44,  203 => 41,  197 => 38,  194 => 37,  192 => 36,  189 => 35,  187 => 34,  185 => 33,  179 => 30,  176 => 29,  173 => 28,  171 => 27,  168 => 26,  158 => 25,  148 => 22,  146 => 21,  136 => 20,  126 => 17,  123 => 16,  121 => 15,  119 => 14,  109 => 13,  99 => 10,  96 => 9,  94 => 8,  92 => 7,  82 => 6,  59 => 1,);
+        return array (  1167 => 337,  1151 => 335,  1147 => 334,  1130 => 333,  1124 => 332,  1122 => 331,  1112 => 330,  1099 => 323,  1095 => 322,  1089 => 321,  1076 => 320,  1066 => 319,  1053 => 314,  1049 => 313,  1043 => 312,  1030 => 311,  1020 => 310,  1009 => 307,  1007 => 306,  997 => 305,  986 => 302,  984 => 301,  974 => 300,  963 => 297,  961 => 296,  951 => 295,  940 => 292,  938 => 291,  928 => 290,  917 => 286,  915 => 285,  913 => 284,  911 => 283,  909 => 282,  904 => 281,  891 => 280,  888 => 278,  886 => 277,  884 => 276,  874 => 275,  862 => 269,  858 => 268,  845 => 267,  841 => 264,  838 => 261,  837 => 260,  836 => 259,  834 => 258,  831 => 257,  828 => 256,  825 => 255,  822 => 254,  819 => 253,  817 => 252,  814 => 251,  811 => 250,  808 => 249,  806 => 248,  796 => 247,  786 => 244,  776 => 243,  766 => 240,  756 => 239,  746 => 236,  743 => 235,  741 => 234,  738 => 233,  736 => 232,  734 => 231,  724 => 230,  714 => 227,  711 => 226,  709 => 225,  707 => 224,  697 => 223,  683 => 216,  680 => 215,  677 => 214,  675 => 213,  672 => 212,  666 => 210,  663 => 209,  661 => 208,  651 => 207,  637 => 202,  634 => 201,  628 => 199,  625 => 198,  622 => 197,  620 => 196,  617 => 195,  615 => 194,  605 => 193,  593 => 189,  586 => 187,  584 => 186,  582 => 185,  578 => 184,  573 => 183,  569 => 181,  562 => 179,  560 => 178,  558 => 177,  554 => 176,  551 => 175,  549 => 174,  539 => 173,  529 => 170,  527 => 169,  525 => 168,  519 => 165,  517 => 164,  515 => 163,  513 => 162,  511 => 161,  502 => 159,  500 => 158,  492 => 157,  489 => 155,  487 => 154,  484 => 153,  481 => 152,  479 => 151,  477 => 150,  474 => 149,  471 => 148,  469 => 147,  467 => 146,  457 => 145,  446 => 142,  442 => 140,  439 => 139,  431 => 134,  420 => 127,  412 => 122,  399 => 112,  388 => 105,  385 => 104,  379 => 102,  376 => 101,  373 => 100,  370 => 98,  368 => 97,  358 => 96,  347 => 93,  343 => 91,  341 => 90,  339 => 88,  338 => 87,  337 => 86,  336 => 85,  330 => 83,  327 => 82,  324 => 81,  321 => 79,  319 => 78,  309 => 77,  295 => 72,  291 => 71,  287 => 70,  282 => 68,  278 => 67,  275 => 66,  272 => 65,  269 => 63,  267 => 62,  257 => 61,  247 => 58,  244 => 56,  242 => 55,  240 => 54,  235 => 51,  231 => 49,  229 => 48,  227 => 47,  225 => 46,  223 => 45,  213 => 44,  203 => 41,  197 => 38,  194 => 37,  192 => 36,  189 => 35,  187 => 34,  185 => 33,  179 => 30,  176 => 29,  173 => 28,  171 => 27,  168 => 26,  158 => 25,  148 => 22,  146 => 21,  136 => 20,  126 => 17,  123 => 16,  121 => 15,  119 => 14,  109 => 13,  99 => 10,  96 => 9,  94 => 8,  92 => 7,  82 => 6,  59 => 1,);
     }
 
     public function getSourceContext()
@@ -1444,7 +1474,7 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~\"_help\"}} -%}
     {%- endif -%}
-    <div class=\"row\">
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' row')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <div class=\"large-12 columns{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}\">
             {{- form_label(form) -}}
             {{- form_widget(form, widget_attr) -}}
@@ -1475,7 +1505,7 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 {%- endblock datetime_row %}
 
 {% block checkbox_row -%}
-    <div class=\"row\">
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' row')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <div class=\"large-12 columns{% if not valid %} error{% endif %}\">
             {{ form_widget(form) }}
             {{ form_errors(form) }}
@@ -1484,7 +1514,7 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
 {%- endblock checkbox_row %}
 
 {% block radio_row -%}
-    <div class=\"row\">
+    <div{% with {attr: row_attr|merge({class: (row_attr.class|default('') ~ ' row')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <div class=\"large-12 columns{% if not valid %} error{% endif %}\">
             {{ form_widget(form) }}
             {{ form_errors(form) }}
