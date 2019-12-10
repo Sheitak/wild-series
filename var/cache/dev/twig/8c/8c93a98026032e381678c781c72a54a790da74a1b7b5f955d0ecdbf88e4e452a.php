@@ -115,7 +115,7 @@ class __TwigTemplate_4e33eb2d39dc2b6b2fa8ab0f98c7dee74bf08ce8a1ad8fb89c6200aa9cb
             echo "</h2>
                         <a class=\"mt-0\" href=\"";
             // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_episode", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["season"]) || array_key_exists("season", $context) ? $context["season"] : (function () { throw new RuntimeError('Variable "season" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_episode", ["id" => twig_get_attribute($this->env, $this->source, $context["episode"], "id", [], "any", false, false, false, 16)]), "html", null, true);
             echo "\">+`'°o En savoir plus ? o°'`+</a>
                         <p class=\"progsize\">";
             // line 17
@@ -178,7 +178,7 @@ class __TwigTemplate_4e33eb2d39dc2b6b2fa8ab0f98c7dee74bf08ce8a1ad8fb89c6200aa9cb
                 <div class=\"card mb-3 pt-3 col-xl-12 mx-auto\">
                     <div class=\"container-fluid\">
                         <h2 class=\"mt-0\" href=\"#\">{{ episode.number }} - {{ episode.title }}</h2>
-                        <a class=\"mt-0\" href=\"{{ path('wild_episode', { 'id': season.id }) }}\">+`'°o En savoir plus ? o°'`+</a>
+                        <a class=\"mt-0\" href=\"{{ path('wild_episode', { 'id': episode.id }) }}\">+`'°o En savoir plus ? o°'`+</a>
                         <p class=\"progsize\">{{ episode.summary }}</p>
                     </div>
                 </div>
