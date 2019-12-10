@@ -128,6 +128,16 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         <a class=\"dropdown-item\" href=\"/episodes/new\">Enregistrer un nouvel épisode ?</a>
                     </div>
                 </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Acteurs
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/actor\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/actor/new\">Enregistrer un nouvel acteurs ?</a>
+                    </div>
+                </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link disabled\" href=\"#\">Années</a>
                 </li>
@@ -223,6 +233,16 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         <a class=\"dropdown-item\" href=\"/episodes\">Voir la liste complète</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"/episodes/new\">Enregistrer un nouvel épisode ?</a>
+                    </div>
+                </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Acteurs
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/actor\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/actor/new\">Enregistrer un nouvel acteurs ?</a>
                     </div>
                 </li>
                 <li class=\"nav-item\">

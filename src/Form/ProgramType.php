@@ -18,6 +18,7 @@ class ProgramType extends AbstractType
             ->add('country')
             ->add('year')
             ->add('category', null, ['choice_label' => 'name'])
+            ->add('actors', null, ['choice_label' => 'name'])
         ;
     }
 

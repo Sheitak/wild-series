@@ -64,10 +64,10 @@ class Program extends \App\Entity\Program implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'poster', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'country', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'category', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'seasons'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'poster', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'country', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'category', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'seasons', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'actors'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'poster', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'country', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'category', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'seasons'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'title', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'summary', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'poster', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'country', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'category', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'seasons', '' . "\0" . 'App\\Entity\\Program' . "\0" . 'actors'];
     }
 
     /**
@@ -351,6 +351,39 @@ class Program extends \App\Entity\Program implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setYear', [$year]);
 
         return parent::setYear($year);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getActors(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActors', []);
+
+        return parent::getActors();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addActor(\App\Entity\Actor $actor): \App\Entity\Program
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addActor', [$actor]);
+
+        return parent::addActor($actor);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeActor(\App\Entity\Actor $actor): \App\Entity\Program
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeActor', [$actor]);
+
+        return parent::removeActor($actor);
     }
 
 }

@@ -133,21 +133,52 @@ class __TwigTemplate_8b4b89f289d870f5ed31e239ec50d46c360b76a9c28093a92dd49e219a5
             </tr>
         </tbody>
     </table>
+    <strong>Acteur :</strong>
+    <ul>
+        ";
+        // line 38
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 38, $this->source); })()), "actors", [], "any", false, false, false, 38));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["actor"]) {
+            // line 39
+            echo "            <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("actor_show", ["id" => twig_get_attribute($this->env, $this->source, $context["actor"], "id", [], "any", false, false, false, 39)]), "html", null, true);
+            echo "\">
+                <li>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["actor"], "name", [], "any", false, false, false, 40), "html", null, true);
+            echo " </li>
+            </a>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 43
+            echo "            <li>Aucun acteur pour cette série</li>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['actor'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 45
+        echo "    </ul>
 
     <a href=\"";
-        // line 37
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 49, $this->source); })()), "id", [], "any", false, false, false, 49)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 41
+        // line 51
         echo twig_include($this->env, $context, "program/_delete_form.html.twig");
         echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -169,7 +200,7 @@ class __TwigTemplate_8b4b89f289d870f5ed31e239ec50d46c360b76a9c28093a92dd49e219a5
 
     public function getDebugInfo()
     {
-        return array (  149 => 41,  144 => 39,  139 => 37,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  179 => 51,  174 => 49,  169 => 47,  165 => 45,  158 => 43,  150 => 40,  145 => 39,  140 => 38,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -209,12 +240,23 @@ class __TwigTemplate_8b4b89f289d870f5ed31e239ec50d46c360b76a9c28093a92dd49e219a5
             </tr>
         </tbody>
     </table>
+    <strong>Acteur :</strong>
+    <ul>
+        {% for actor in program.actors %}
+            <a href=\"{{ path('actor_show', {'id': actor.id}) }}\">
+                <li>{{ actor.name }} </li>
+            </a>
+        {% else %}
+            <li>Aucun acteur pour cette série</li>
+        {% endfor %}
+    </ul>
 
     <a href=\"{{ path('program_index') }}\">back to list</a>
 
     <a href=\"{{ path('program_edit', {'id': program.id}) }}\">edit</a>
 
     {{ include('program/_delete_form.html.twig') }}
+
 {% endblock %}
 ", "program/show.html.twig", "/home/sheitak/Wild Series/wild-series/templates/program/show.html.twig");
     }
