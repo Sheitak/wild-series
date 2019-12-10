@@ -8,6 +8,8 @@ Video Symfony 10 : https://www.loom.com/share/2d30908e37db4ae2ae98c4a063200741
 
 Video Symfony 11 : https://www.loom.com/share/aa5dd115b3a447bbb280995ad87ce34d
 
+Video Symfony 12 : https://www.loom.com/share/dbbd2d4b09e249b0a38a779528cfaab1
+
 # Project installation
 
 ## 1. Configure your environment

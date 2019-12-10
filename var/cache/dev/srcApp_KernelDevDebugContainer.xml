@@ -340,6 +340,27 @@
         <argument type="service" id=".service_locator.CDOTD6..App\Controller\DefaultController"/>
       </call>
     </service>
+    <service id="App\Controller\EpisodesController" class="App\Controller\EpisodesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\EpisodesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProgramController" class="App\Controller\ProgramController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\ProgramController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SeasonController" class="App\Controller\SeasonController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\SeasonController"/>
+      </call>
+    </service>
     <service id="App\Controller\WildController" class="App\Controller\WildController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -350,7 +371,16 @@
     <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\EpisodesType" class="App\Form\EpisodesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ProgramSearchType" class="App\Form\ProgramSearchType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
@@ -711,7 +741,10 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CategoryType</argument>
+        <argument>App\Form\EpisodesType</argument>
         <argument>App\Form\ProgramSearchType</argument>
+        <argument>App\Form\ProgramType</argument>
+        <argument>App\Form\SeasonType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -982,7 +1015,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.jqEebHV"/>
+      <argument type="service" id=".service_locator._J4Q9qh"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2153,14 +2186,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -4495,7 +4520,7 @@
       <tag name="console.command" command="server:run"/>
       <argument>/home/sheitak/Wild Series/wild-series/public</argument>
       <argument>dev</argument>
-      <argument>/home/sheitak/Wild Series/wild-series</argument>
+      <argument>/home/sheitak/Wild Series/wild-series/var/cache</argument>
       <call method="setName">
         <argument>server:run</argument>
       </call>
@@ -4504,21 +4529,21 @@
       <tag name="console.command" command="server:start"/>
       <argument>/home/sheitak/Wild Series/wild-series/public</argument>
       <argument>dev</argument>
-      <argument>/home/sheitak/Wild Series/wild-series</argument>
+      <argument>/home/sheitak/Wild Series/wild-series/var/cache</argument>
       <call method="setName">
         <argument>server:start</argument>
       </call>
     </service>
     <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
       <tag name="console.command" command="server:stop"/>
-      <argument>/home/sheitak/Wild Series/wild-series</argument>
+      <argument>/home/sheitak/Wild Series/wild-series/var/cache</argument>
       <call method="setName">
         <argument>server:stop</argument>
       </call>
     </service>
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command" command="server:status"/>
-      <argument>/home/sheitak/Wild Series/wild-series</argument>
+      <argument>/home/sheitak/Wild Series/wild-series/var/cache</argument>
       <call method="setName">
         <argument>server:status</argument>
       </call>
@@ -4587,13 +4612,28 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EpisodesController" class="App\Controller\EpisodesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EpisodesController" class="App\Controller\EpisodesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EpisodesController" class="App\Controller\EpisodesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProgramController" class="App\Controller\ProgramController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProgramController" class="App\Controller\ProgramController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProgramController" class="App\Controller\ProgramController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SeasonController" class="App\Controller\SeasonController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SeasonController" class="App\Controller\SeasonController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SeasonController" class="App\Controller\SeasonController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\WildController" class="App\Controller\WildController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\WildController" class="App\Controller\WildController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\WildController" class="App\Controller\WildController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EpisodesType" class="App\Form\EpisodesType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EpisodesType" class="App\Form\EpisodesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProgramSearchType" class="App\Form\ProgramSearchType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProgramSearchType" class="App\Form\ProgramSearchType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EpisodesRepository" class="App\Repository\EpisodesRepository" autowire="true" abstract="true"/>
@@ -4764,6 +4804,42 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.6yS0n0P" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="episodesRepository" type="service" id="App\Repository\EpisodesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dX8oWEV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="episode" type="service" id=".errored..service_locator.dX8oWEV.App\Entity\Episodes"/>
+      </argument>
+    </service>
+    <service id=".service_locator.58Rml10" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="programRepository" type="service" id="App\Repository\ProgramRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.tXoa_ER" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="program" type="service" id=".errored..service_locator.tXoa_ER.App\Entity\Program"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RILWcPl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="seasonRepository" type="service" id="App\Repository\SeasonRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ADeF0mv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="season" type="service" id=".errored..service_locator.ADeF0mv.App\Entity\Season"/>
+      </argument>
+    </service>
     <service id=".service_locator.gEKwHLd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4792,13 +4868,37 @@
         <argument key="episodes" type="service" id=".errored..service_locator.qNhmoAu.App\Entity\Episodes"/>
       </argument>
     </service>
-    <service id=".service_locator._JlOT3n" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.BGMrrwK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\EpisodesController::delete" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\EpisodesController::edit" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\EpisodesController::index" type="service" id=".service_locator.6yS0n0P"/>
+        <argument key="App\Controller\EpisodesController::show" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\ProgramController::delete" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\ProgramController::edit" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\ProgramController::index" type="service" id=".service_locator.58Rml10"/>
+        <argument key="App\Controller\ProgramController::show" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\SeasonController::delete" type="service" id=".service_locator.ADeF0mv"/>
+        <argument key="App\Controller\SeasonController::edit" type="service" id=".service_locator.ADeF0mv"/>
+        <argument key="App\Controller\SeasonController::index" type="service" id=".service_locator.RILWcPl"/>
+        <argument key="App\Controller\SeasonController::show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\WildController::showByCategory" type="service" id=".service_locator.gEKwHLd"/>
         <argument key="App\Controller\WildController::showByEpisode" type="service" id=".service_locator.qNhmoAu"/>
         <argument key="App\Controller\WildController::showByProgram" type="service" id=".service_locator.yrDeEqb"/>
         <argument key="App\Controller\WildController::showBySeason" type="service" id=".service_locator.X1wF8Wb"/>
+        <argument key="App\Controller\EpisodesController:delete" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\EpisodesController:edit" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\EpisodesController:index" type="service" id=".service_locator.6yS0n0P"/>
+        <argument key="App\Controller\EpisodesController:show" type="service" id=".service_locator.dX8oWEV"/>
+        <argument key="App\Controller\ProgramController:delete" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\ProgramController:edit" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\ProgramController:index" type="service" id=".service_locator.58Rml10"/>
+        <argument key="App\Controller\ProgramController:show" type="service" id=".service_locator.tXoa_ER"/>
+        <argument key="App\Controller\SeasonController:delete" type="service" id=".service_locator.ADeF0mv"/>
+        <argument key="App\Controller\SeasonController:edit" type="service" id=".service_locator.ADeF0mv"/>
+        <argument key="App\Controller\SeasonController:index" type="service" id=".service_locator.RILWcPl"/>
+        <argument key="App\Controller\SeasonController:show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\WildController:showByCategory" type="service" id=".service_locator.gEKwHLd"/>
         <argument key="App\Controller\WildController:showByEpisode" type="service" id=".service_locator.qNhmoAu"/>
         <argument key="App\Controller\WildController:showByProgram" type="service" id=".service_locator.yrDeEqb"/>
@@ -4864,11 +4964,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.jqEebHV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator._J4Q9qh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
+        <argument key="App\Form\EpisodesType" type="service" id="App\Form\EpisodesType"/>
         <argument key="App\Form\ProgramSearchType" type="service" id="App\Form\ProgramSearchType"/>
+        <argument key="App\Form\ProgramType" type="service" id="App\Form\ProgramType"/>
+        <argument key="App\Form\SeasonType" type="service" id="App\Form\SeasonType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
@@ -5098,6 +5201,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.CDOTD6." method="withContext"/>
     </service>
+    <service id=".service_locator.CDOTD6..App\Controller\EpisodesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\EpisodesController"/>
+      <argument>App\Controller\EpisodesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
+    <service id=".service_locator.CDOTD6..App\Controller\ProgramController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ProgramController"/>
+      <argument>App\Controller\ProgramController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
+    <service id=".service_locator.CDOTD6..App\Controller\SeasonController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\SeasonController"/>
+      <argument>App\Controller\SeasonController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
     <service id=".service_locator.CDOTD6..App\Controller\WildController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\WildController"/>
       <argument>App\Controller\WildController</argument>
@@ -5197,12 +5318,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator._JlOT3n"/>
+      <argument type="service" id=".service_locator.BGMrrwK"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator._JlOT3n"/>
+      <argument type="service" id=".service_locator.BGMrrwK"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5226,6 +5347,9 @@
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
     </service>
+    <service id=".errored..service_locator.dX8oWEV.App\Entity\Episodes" class="App\Entity\Episodes"/>
+    <service id=".errored..service_locator.tXoa_ER.App\Entity\Program" class="App\Entity\Program"/>
+    <service id=".errored..service_locator.ADeF0mv.App\Entity\Season" class="App\Entity\Season"/>
     <service id=".errored..service_locator.qNhmoAu.App\Entity\Episodes" class="App\Entity\Episodes"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.2VPiY4w"/>
@@ -5606,7 +5730,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._JlOT3n"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.BGMrrwK"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

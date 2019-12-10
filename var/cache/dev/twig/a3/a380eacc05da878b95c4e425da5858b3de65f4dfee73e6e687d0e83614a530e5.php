@@ -82,8 +82,10 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"/wild/category/horreur\">Horreur</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/fantasy\">Fantasy</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/thriller\">Thriller</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/drame\">Drame</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/sciencefiction\">Science Fiction</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"/category/form\">Enregistrer une nouvelle catégorie ?</a>
@@ -102,11 +104,29 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         <a class=\"dropdown-item\" href=\"/wild/series/fear-the-walking-dead\">Fear The Walking Dead</a>
                         <a class=\"dropdown-item\" href=\"#\">????</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"dropdown-item\" href=\"#\">Enregistrer une nouvelle série ?</a>
+                        <a class=\"dropdown-item\" href=\"/program\">Voir la liste complète</a>
+                        <a class=\"dropdown-item\" href=\"/program/new\">Enregistrer une nouvelle série ?</a>
                     </div>
                 </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Saisons</a>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Saisons
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/season\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/season/new\">Enregistrer une nouvelle saison ?</a>
+                    </div>
+                </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Episodes
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/episodes\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/episodes/new\">Enregistrer un nouvel épisode ?</a>
+                    </div>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link disabled\" href=\"#\">Années</a>
@@ -159,8 +179,10 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                     </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                         <a class=\"dropdown-item\" href=\"/wild/category/horreur\">Horreur</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
-                        <a class=\"dropdown-item\" href=\"#\">???</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/fantasy\">Fantasy</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/thriller\">Thriller</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/drame\">Drame</a>
+                        <a class=\"dropdown-item\" href=\"/wild/category/sciencefiction\">Science Fiction</a>
                         <a class=\"dropdown-item\" href=\"#\">???</a>
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"/category/form\">Enregistrer une nouvelle catégorie ?</a>
@@ -179,11 +201,29 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                         <a class=\"dropdown-item\" href=\"/wild/series/fear-the-walking-dead\">Fear The Walking Dead</a>
                         <a class=\"dropdown-item\" href=\"#\">????</a>
                         <div class=\"dropdown-divider\"></div>
-                        <a class=\"dropdown-item\" href=\"#\">Enregistrer une nouvelle série ?</a>
+                        <a class=\"dropdown-item\" href=\"/program\">Voir la liste complète</a>
+                        <a class=\"dropdown-item\" href=\"/program/new\">Enregistrer une nouvelle série ?</a>
                     </div>
                 </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Saisons</a>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Saisons
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/season\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/season/new\">Enregistrer une nouvelle saison ?</a>
+                    </div>
+                </li>
+                <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        Episodes
+                    </a>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"/episodes\">Voir la liste complète</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"/episodes/new\">Enregistrer un nouvel épisode ?</a>
+                    </div>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link disabled\" href=\"#\">Années</a>
