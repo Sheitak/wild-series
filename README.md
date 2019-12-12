@@ -12,6 +12,8 @@ Video Symfony 12 : https://www.loom.com/share/dbbd2d4b09e249b0a38a779528cfaab1
 
 Video Symfony 13 : https://www.loom.com/share/f6876f8c483b40c8be78cd8153cd44af
 
+Video Symfony 15 : https://www.loom.com/share/90e4deb7242f492ca2d2318ef8a0d9b2
+
 # Project installation
 
 ## 1. Configure your environment
