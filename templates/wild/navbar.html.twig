@@ -75,7 +75,14 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Années</a>
+                    <a class="nav-link" href="/login">
+                        {% if app.user %}
+                            {{ app.user.email }}
+                            <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}"> Se connecter</a>
+                        {% endif %}
+                    </a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

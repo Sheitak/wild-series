@@ -37,6 +37,8 @@ return [
     'season_show' => [['id'], ['_controller' => 'App\\Controller\\SeasonController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/season']], [], []],
     'season_edit' => [['id'], ['_controller' => 'App\\Controller\\SeasonController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/season']], [], []],
     'season_delete' => [['id'], ['_controller' => 'App\\Controller\\SeasonController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/season']], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'wild_wild_index' => [[], ['_controller' => 'App\\Controller\\WildController::index'], [], [['text', '/wild/']], [], []],
     'wild_show' => [['slug'], ['slug' => null, '_controller' => 'App\\Controller\\WildController::show'], ['slug' => '[a-z0-9-]+'], [['variable', '/', '[a-z0-9-]+', 'slug', true], ['text', '/wild/show']], [], []],
     'wild_show_category' => [['categoryName'], ['categoryName' => null, '_controller' => 'App\\Controller\\WildController::showByCategory'], ['categoryName' => '[a-z]+'], [['variable', '/', '[a-z]+', 'categoryName', true], ['text', '/wild/category']], [], []],

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /wild/navbar.html.twig */
+/* wild/navbar.html.twig */
 class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf275931 extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/wild/navbar.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "wild/navbar.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/wild/navbar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "wild/navbar.html.twig"));
 
         // line 1
         $this->displayBlock('nav', $context, $blocks);
@@ -139,7 +139,28 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                     </div>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Années</a>
+                    <a class=\"nav-link\" href=\"/login\">
+                        ";
+        // line 79
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "user", [], "any", false, false, false, 79)) {
+            // line 80
+            echo "                            ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "user", [], "any", false, false, false, 80), "email", [], "any", false, false, false, 80), "html", null, true);
+            echo "
+                            <a href=\"";
+            // line 81
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\"> Se déconnecter</a>
+                        ";
+        } else {
+            // line 83
+            echo "                            <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"> Se connecter</a>
+                        ";
+        }
+        // line 85
+        echo "                    </a>
                 </li>
             </ul>
             <form class=\"form-inline my-2 my-lg-0\">
@@ -159,12 +180,12 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
 
     public function getTemplateName()
     {
-        return "/wild/navbar.html.twig";
+        return "wild/navbar.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  76 => 13,  63 => 2,  44 => 1,);
+        return array (  163 => 85,  157 => 83,  152 => 81,  147 => 80,  145 => 79,  76 => 13,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -246,7 +267,14 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
                     </div>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" href=\"#\">Années</a>
+                    <a class=\"nav-link\" href=\"/login\">
+                        {% if app.user %}
+                            {{ app.user.email }}
+                            <a href=\"{{ path('app_logout') }}\"> Se déconnecter</a>
+                        {% else %}
+                            <a href=\"{{ path('app_login') }}\"> Se connecter</a>
+                        {% endif %}
+                    </a>
                 </li>
             </ul>
             <form class=\"form-inline my-2 my-lg-0\">
@@ -256,6 +284,6 @@ class __TwigTemplate_b444b3e104f154ae20035f0aa48b76afc2cde8a6b2a928c5222bee95bf2
         </div>
     </nav>
 {% endblock %}
-", "/wild/navbar.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/navbar.html.twig");
+", "wild/navbar.html.twig", "/home/sheitak/Wild Series/wild-series/templates/wild/navbar.html.twig");
     }
 }
