@@ -120,18 +120,34 @@ class __TwigTemplate_3de5573d8fefe5110e66e461bf9a0edb943267360bf345e5bba25bfc72d
         </tbody>
     </table>
 
-    <a href=\"";
+    ";
         // line 29
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29)) {
+            // line 30
+            echo "
+        <h1>Create new Comment</h1>
+
+        ";
+            // line 33
+            echo twig_include($this->env, $context, "comment/_form.html.twig");
+            echo "
+
+    ";
+        }
+        // line 36
+        echo "
+    <a href=\"";
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episodes_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episodes_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
+        // line 39
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episodes_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 33
+        // line 41
         echo twig_include($this->env, $context, "episodes/_delete_form.html.twig");
         echo "
 ";
@@ -155,7 +171,7 @@ class __TwigTemplate_3de5573d8fefe5110e66e461bf9a0edb943267360bf345e5bba25bfc72d
 
     public function getDebugInfo()
     {
-        return array (  135 => 33,  130 => 31,  125 => 29,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  151 => 41,  146 => 39,  141 => 37,  138 => 36,  132 => 33,  127 => 30,  125 => 29,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,6 +203,14 @@ class __TwigTemplate_3de5573d8fefe5110e66e461bf9a0edb943267360bf345e5bba25bfc72d
             </tr>
         </tbody>
     </table>
+
+    {% if app.user %}
+
+        <h1>Create new Comment</h1>
+
+        {{ include('comment/_form.html.twig') }}
+
+    {% endif %}
 
     <a href=\"{{ path('episodes_index') }}\">back to list</a>
 

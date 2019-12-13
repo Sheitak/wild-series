@@ -91,8 +91,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         // redirect to some "app_homepage" route - of wherever you want
         return new RedirectResponse($this->urlGenerator->generate('wild_index'));
     }
-
-    public function hello($name, AuthorizationCheckerInterface $authChecker)
+//
+    public function Authentication($name, AuthorizationCheckerInterface $authChecker)
     {
         // GOOD - use of the normal security methods
         //$hasAccess = $this->isGranted('ROLE_ADMIN');
@@ -105,7 +105,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
         return new RedirectResponse($this->urlGenerator->generate('wild_index'));
     }
-
+//
     protected function getLoginUrl()
     {
         return $this->urlGenerator->generate('app_login');

@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Episodes;
+use App\Entity\Comment;
+use App\Form\CommentType;
+use App\Repository\CommentRepository;
 use App\Form\EpisodesType;
 use App\Repository\EpisodesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -51,10 +54,23 @@ class EpisodesController extends AbstractController
     /**
      * @Route("/{id}", name="episodes_show", methods={"GET"})
      */
-    public function show(Episodes $episode): Response
+    public function show(Request $request, Episodes $episode): Response
     {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('comment_index');
+        }
+
         return $this->render('episodes/show.html.twig', [
             'episode' => $episode,
+            'form' => $form
         ]);
     }
 

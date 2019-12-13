@@ -23,7 +23,7 @@ class Comment
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comment")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="comment")
      * @ORM\JoinColumn(nullable=false)
      */
     private $programs;
