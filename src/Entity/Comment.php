@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,12 +25,6 @@ class Comment
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="comment")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $programs;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $comment;
@@ -37,6 +33,11 @@ class Comment
      * @ORM\Column(type="integer")
      */
     private $rate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="comments")
+     */
+    private $program;
 
     public function getId(): ?int
     {
@@ -79,14 +80,14 @@ class Comment
         return $this;
     }
 
-    public function getPrograms()
+    public function getProgram(): ?Program
     {
-        return $this->programs;
+        return $this->program;
     }
 
-    public function setPrograms($programs): self
+    public function setProgram(?Program $program): self
     {
-        $this->programs = $programs;
+        $this->program = $program;
 
         return $this;
     }
