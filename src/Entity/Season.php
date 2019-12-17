@@ -40,9 +40,9 @@ class Season
     private $programs;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Episodes", mappedBy="season")
+     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season")
      */
-    private $episodes;
+    private $episode;
 
     public function __construct()
     {

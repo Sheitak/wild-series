@@ -34,7 +34,8 @@ class CommentController extends AbstractController
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();
@@ -53,8 +54,13 @@ class CommentController extends AbstractController
      */
     public function show(Comment $comment): Response
     {
+        $program = $comment->getPrograms();
+        $user = $comment->getUser();
+
         return $this->render('comment/show.html.twig', [
             'comment' => $comment,
+            'program' => $program,
+            'author' => $user
         ]);
     }
 
@@ -66,7 +72,8 @@ class CommentController extends AbstractController
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('comment_index');
@@ -83,7 +90,8 @@ class CommentController extends AbstractController
      */
     public function delete(Request $request, Comment $comment): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token')))
+        {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($comment);
             $entityManager->flush();

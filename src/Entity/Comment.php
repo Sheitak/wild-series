@@ -79,12 +79,12 @@ class Comment
         return $this;
     }
 
-    public function getPrograms(): ?User
+    public function getPrograms()
     {
         return $this->programs;
     }
 
-    public function setPrograms(?User $programs): self
+    public function setPrograms($programs): self
     {
         $this->programs = $programs;
 

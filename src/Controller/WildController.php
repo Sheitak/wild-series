@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Program;
-use App\Entity\Episodes;
+use App\Entity\Episode;
 use App\Entity\Season;
 use App\Form\ProgramSearchType;
 
@@ -140,7 +140,10 @@ Class WildController extends AbstractController
      * @Route("/saison/{id<^[0-9]+$>}", defaults={"id" = null}, name="season")
      * @return Response
      */
-     public function showBySeason(int $id, EpisodesRepository $episodesRepository, SeasonRepository $seasonRepository, ProgramRepository $programRepository):Response
+     public function showBySeason(
+         int $id,
+         SeasonRepository $seasonRepository
+     ):Response
      {
          $season = $seasonRepository->findOneBy(
              ['id' => $id]
@@ -161,15 +164,15 @@ Class WildController extends AbstractController
      * @Route("/episode/{id<^[0-9]+$>}", defaults={"id" = null}, name="episode")
      * @return Response
      */
-    public function showByEpisode(Episodes $episodes):Response
+    public function showByEpisode(Episode $episode):Response
     {
 
-        $season = $episodes->getSeason();
+        $season = $episode->getSeason();
         $program = $season->getPrograms();
 
-        return $this->render('wild/episodes.html.twig', [
+        return $this->render('wild/episode.html.twig', [
             'season' => $season,
-            'episode' => $episodes,
+            'episode' => $episode,
             'program' => $program
         ]);
     }

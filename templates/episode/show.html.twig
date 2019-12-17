@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episodes{% endblock %}
+
+{% block body %}
+    <h1>Episodes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ episode.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ episode.title }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ episode.number }}</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>{{ episode.summary }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if app.user %}
+
+        <h4>Create new Comment</h4>
+
+        {{ include('comment/_form.html.twig') }}
+
+    {% endif %}
+
+    <h4>{{ episode.title }} Comment</h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Comment</th>
+            <th>Rate</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>{{ comment.comment }}</td>
+                <td>{{ comment.rate }}</td>
+                <td>
+                    <a href="{{ path('comment_show', {'id': comment.id}) }}">show</a>
+                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('episodes_index') }}">back to list</a>
+
+    <a href="{{ path('episodes_edit', {'id': episode.id}) }}">edit</a>
+
+    {{ include('episodes/_delete_form.html.twig') }}
+{% endblock %}
