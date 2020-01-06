@@ -48,6 +48,7 @@ class Season
     {
         $this->seasons = new ArrayCollection();
         $this->episodes = new ArrayCollection();
+        $this->episode = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -108,29 +109,37 @@ class Season
      */
     public function getEpisodes(): Collection
     {
-        return $this->episodes;
+        return $this->episode;
     }
 
-    public function addEpisode(Episodes $episodes): self
+    public function addEpisode(Episode $episode): self
     {
-        if (!$this->episodes->contains($episodes)) {
-            $this->episodes[] = $episodes;
-            $episodes->setEpisodes($this);
+        if (!$this->episode->contains($episode)) {
+            $this->episode[] = $episode;
+            $episode->setEpisodes($this);
         }
 
         return $this;
     }
 
-    public function removeEpisode(Episodes $episodes): self
+    public function removeEpisode(Episode $episode): self
     {
-        if ($this->episodes->contains($episodes)) {
-            $this->episodes->removeElement($episodes);
+        if ($this->episode->contains($episode)) {
+            $this->episode->removeElement($episode);
             // set the owning side to null (unless already changed)
-            if ($episodes->getEpisodes() === $this) {
-                $episodes->setEpisodes(null);
+            if ($episode->getEpisodes() === $this) {
+                $episode->setEpisodes(null);
             }
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Episode[]
+     */
+    public function getEpisode(): Collection
+    {
+        return $this->episode;
     }
 }

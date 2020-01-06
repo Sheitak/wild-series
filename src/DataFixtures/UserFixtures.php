@@ -26,6 +26,8 @@ class UserFixtures extends Fixture
             $subscriber,
             'subscriberpassword'
         ));
+        $subscriber->setUsername('username');
+        $subscriber->setBio('biographyuser');
 
         $manager->persist($subscriber);
 
@@ -37,6 +39,8 @@ class UserFixtures extends Fixture
             $admin,
             'adminpassword'
         ));
+        $admin->setUsername('username');
+        $admin->setBio('biographyuser');
 
         $manager->persist($admin);
 

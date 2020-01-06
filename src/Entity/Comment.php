@@ -39,6 +39,11 @@ class Comment
      */
     private $program;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Episode", inversedBy="comments")
+     */
+    private $episode;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +93,18 @@ class Comment
     public function setProgram(?Program $program): self
     {
         $this->program = $program;
+
+        return $this;
+    }
+
+    public function getEpisode(): ?Episode
+    {
+        return $this->episode;
+    }
+
+    public function setEpisode(?Episode $episode): self
+    {
+        $this->episode = $episode;
 
         return $this;
     }

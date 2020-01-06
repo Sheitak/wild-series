@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Episodes;
+use App\Entity\Episode;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -16,7 +16,7 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
 
         for ($i = 0; $i < 70; $i++)
         {
-            $episode = new Episodes();
+            $episode = new Episode();
             $episode->setTitle($faker->domainWord);
             $episode->setNumber($faker->randomDigit);
             $episode->setSummary($faker->text);

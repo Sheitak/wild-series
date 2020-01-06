@@ -24,6 +24,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
+            'slug' => 'slug',
+
         ],
 
         'The Haunting Of Hill House' => [
@@ -37,6 +39,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'country' => 'USA',
 
             'year' => '1999',
+
+            'slug' => 'slug',
 
         ],
 
@@ -52,6 +56,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
+            'slug' => 'slug',
+
         ],
 
         'Love Death And Robots' => [
@@ -65,6 +71,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'country' => 'USA',
 
             'year' => '1999',
+
+            'slug' => 'slug',
 
         ],
 
@@ -80,6 +88,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
+            'slug' => 'slug',
+
         ],
 
         'Fear The Walking Dead' => [
@@ -93,6 +103,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'country' => 'USA',
 
             'year' => '1999',
+
+            'slug' => 'slug',
 
         ],
     ];
