@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 /**
  * @Route("/program")
@@ -29,7 +31,7 @@ class ProgramController extends AbstractController
     /**
      * @Route("/new", name="program_new", methods={"GET","POST"})
      */
-    public function new(Request $request, Slugify $slugify): Response
+    public function new(Request $request, MailerInterface $mailer): Response
     {
         $program = new Program();
         $form = $this->createForm(ProgramType::class, $program);
@@ -40,11 +42,16 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             $entityManager->flush();
 
+            $email = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to($this->getParameter('mailer_from'))
+                ->subject('Une nouvelle série vient d\'être publiée !')
+                ->html('<p>Une nouvelle série vient d\'être publiée sur Wild Séries !</p>');
+
+            $mailer->send($email);
+
             return $this->redirectToRoute('program_index');
         }
-
-        $slug = $slugify->generate($program->getTitle());
-        $program->setSlug($slug);
 
         return $this->render('program/new.html.twig', [
             'program' => $program,
@@ -53,31 +60,33 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="program_show", methods={"GET"})
+     * @Route("/{slug}", name="program_show", methods={"GET"})
      */
-    public function show(Program $program): Response
+    public function show(Program $program, Slugify $slugify): Response
     {
+        $slug = $slugify->generate($program->getTitle());
+        $program->setSlug($slug);
+
         return $this->render('program/show.html.twig', [
             'program' => $program,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="program_edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="program_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Program $program, Slugify $slugify): Response
+    public function edit(Program $program, Request $request, Slugify $slugify): Response
     {
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('program_index');
         }
-
-        $slug = $slugify->generate($program->getTitle());
-        $program->setSlug($slug);
 
         return $this->render('program/edit.html.twig', [
             'program' => $program,
@@ -86,12 +95,14 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="program_delete", methods={"DELETE"})
+     * @Route("/{slug}", name="program_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Program $program): Response
+    public function delete(Request $request, Program $program, Slugify $slugify): Response
     {
         if ($this->isCsrfTokenValid('delete'.$program->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             $entityManager->remove($program);
             $entityManager->flush();
         }

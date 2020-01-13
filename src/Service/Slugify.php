@@ -1,42 +1,26 @@
 <?php
 
-
 namespace App\Service;
 
-/**
- * @Route("/service")
- */
 class Slugify
 {
-    public function generate(string $input) : string
+    public function generate($input) : string
     {
-        $input = str_replace(" ", "-", "$input");
-        $input = preg_replace('/pratique/[^A-Za-z0-9-]/', '', $input);
-        $input = preg_replace('/pratique/-+/', '-', $input);
-        $utf8 = array
-        (
-            '/[áàâãªä]/u' => 'a',
-            '/[ÁÀÂÃÄ]/u' => 'A',
-            '/[ÍÌÎÏ]/u' => 'I',
-            '/[íìîï]/u' => 'i',
-            '/[éèêë]/u' => 'e',
-            '/[ÉÈÊË]/u' => 'E',
-            '/[óòôõºö]/u' => 'o',
-            '/[ÓÒÔÕÖ]/u' => 'O',
-            '/[úùûü]/u' => 'u',
-            '/[ÚÙÛÜ]/u' => 'U',
-            '/ç/' => 'c',
-            '/Ç/' => 'C',
-            '/ñ/' => 'n',
-            '/Ñ/' => 'N',
-            '//' => '-', // conversion d'un tiret UTF-8 en un tiret simple
-            '/[]/u' => ' ', // guillemet simple
-            '/[«»]/u' => ' ', // guillemet double
-            '/ /' => ' ', // espace insécable (équiv. à 0x160)
-        );
-        $input = preg_replace(array_keys($utf8), array_values($utf8), $input);
+        $search  = array('À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í',
+            'Î', 'Ï', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'à', 'á', 'â', 'ã',
+            'ä', 'å', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ð', 'ò', 'ó', 'ô', 'õ',
+            'ö', 'ù', 'ú', 'û', 'ü', 'ý', 'ÿ');
+
+        $replace = array('A', 'A', 'A', 'A', 'A', 'A', 'C', 'E', 'E', 'E', 'E', 'I', 'I',
+            'I', 'I', 'O', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'U', 'Y', 'a', 'a', 'a', 'a',
+            'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'o',
+            'o', 'u', 'u', 'u', 'u', 'y', 'y');
+
+        $input= str_replace(' ', '-', $input); // Replaces all spaces with hyphens.
+        $input= str_replace($search, $replace, $input);
+        $input = preg_replace('/--+/', '-', $input);
         $input = strtolower($input);
 
-        return trim($input);
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $input); // Removes special chars.
     }
 }

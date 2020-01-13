@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Episodes</h1>
 
-    {{ include('episodes/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('episode/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('episodes_index') }}">back to list</a>
+    <a href="{{ path('episode_index') }}">back to list</a>
 
-    {{ include('episodes/_delete_form.html.twig') }}
+    {{ include('episode/_delete_form.html.twig') }}
 {% endblock %}

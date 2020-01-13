@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Program;
+use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -24,7 +25,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'Walking Dead',
 
         ],
 
@@ -40,7 +41,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'The Haunting Of Hill House',
 
         ],
 
@@ -56,7 +57,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'American Horror Story',
 
         ],
 
@@ -72,7 +73,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'Love Death And Robots',
 
         ],
 
@@ -88,7 +89,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'Penny Dreadful',
 
         ],
 
@@ -104,7 +105,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
             'year' => '1999',
 
-            'slug' => 'slug',
+            'slug' => 'Fear The Walking Dead',
 
         ],
     ];
@@ -113,6 +114,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
     {
         //$faker  =  Faker\Factory::create('fr_FR');
         $i = 0;
+        $slugify = new Slugify();
         foreach (self::PROGRAMS as $title => $data)
         //for ($i = 0; $i < 15; $i++)
         {
@@ -128,7 +130,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setPoster($data['poster']);
             $program->setCountry($data['country']);
             $program->setYear($data['year']);
-            $program->setSlug($data['slug']);
+            $program->setSlug($slugify->generate($program->getTitle()));
             $manager->persist($program);
 
             $this->addReference('program_' . $i, $program);
