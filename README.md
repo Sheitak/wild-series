@@ -18,6 +18,8 @@ Video Symfony 15 : https://www.loom.com/share/90e4deb7242f492ca2d2318ef8a0d9b2
 
 Video Symfony 16 : https://www.loom.com/share/6b95445c290e43ebbee994ca9f2facdf
 
+Video Symfony 17 : https://www.loom.com/share/ba1feda8868f4e78bfb384a0b4f7b5a4
+
 Video Symfony 18 : https://www.loom.com/share/4b7c75198be74199b2c783ae087467ec
 
 # Project installation

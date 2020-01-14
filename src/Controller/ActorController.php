@@ -29,7 +29,7 @@ class ActorController extends AbstractController
     /**
      * @Route("/new", name="actor_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Slugify $slugify): Response
     {
         $actor = new Actor();
         $form = $this->createForm(ActorType::class, $actor);
@@ -37,6 +37,8 @@ class ActorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($actor->getName());
+            $actor->setSlug($slug);
             $entityManager->persist($actor);
             $entityManager->flush();
 
