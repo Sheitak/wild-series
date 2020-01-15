@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Program;
 use App\Entity\Episode;
+use App\Entity\User;
 use App\Entity\Season;
 use App\Form\ProgramSearchType;
 
@@ -91,7 +92,7 @@ Class WildController extends AbstractController
      * @Route("/category/{categoryName<^[a-z]+$>}", defaults={"categoryName" = null}, name="show_category")
      * @return Response
      */
-    public function showByCategory(string $categoryName, CategoryRepository $categoryRepository, ProgramRepository $programRepository):Response
+    public function showByCategory($categoryName, CategoryRepository $categoryRepository, ProgramRepository $programRepository):Response
     {
         $category = $categoryRepository->findBy(
             ['name' => $categoryName]
@@ -140,10 +141,7 @@ Class WildController extends AbstractController
      * @Route("/saison/{id<^[0-9]+$>}", defaults={"id" = null}, name="season")
      * @return Response
      */
-     public function showBySeason(
-         int $id,
-         SeasonRepository $seasonRepository
-     ):Response
+     public function showBySeason(int $id, SeasonRepository $seasonRepository):Response
      {
          $season = $seasonRepository->findOneBy(
              ['id' => $id]
@@ -174,6 +172,20 @@ Class WildController extends AbstractController
             'season' => $season,
             'episode' => $episode,
             'program' => $program
+        ]);
+    }
+
+    /**
+     * @Route("/myprofile/", name="myprofile")
+     * @param User $user
+     * @return Response
+     */
+    public function myProfile(User $user):Response
+    {
+        $profile = $user->getUser();
+
+        return $this->render('wild/myprofile.html.twig', [
+            'user' => $profile,
         ]);
     }
 }

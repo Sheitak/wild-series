@@ -27,7 +27,11 @@
                 <td>{{ comment.episode.title }}</td>
                 <td>
                     <a href="{{ path('comment_show', {'id': comment.id}) }}">show</a>
-                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">edit</a>
+
+                    {% if comment.user.username == user.username or is_granted("ROLE_ADMIN")%}
+                        <a href="{{ path('comment_edit', {'id': comment.id}) }}">edit</a>
+                    {% endif %}
+
                 </td>
             </tr>
         {% else %}

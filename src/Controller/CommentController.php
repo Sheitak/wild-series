@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/comment")
@@ -20,8 +22,11 @@ class CommentController extends AbstractController
      */
     public function index(CommentRepository $commentRepository): Response
     {
+        $this->getUser();
+
         return $this->render('comment/index.html.twig', [
             'comments' => $commentRepository->findAll(),
+            'user' => $this->getUser()
         ]);
     }
 
@@ -30,6 +35,7 @@ class CommentController extends AbstractController
      */
     public function new(Request $request): Response
     {
+
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
@@ -40,7 +46,7 @@ class CommentController extends AbstractController
             $entityManager->persist($comment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('comment_index');
+            //return $this->redirectToRoute('comment_index');
         }
 
         return $this->render('comment/new.html.twig', [
@@ -51,10 +57,12 @@ class CommentController extends AbstractController
 
     /**
      * @Route("/{id}", name="comment_show", methods={"GET"})
+     * @param Comment $comment
+     * @return Response
      */
     public function show(Comment $comment): Response
     {
-        $program = $comment->getPrograms();
+        $program = $comment->getProgram();
         $user = $comment->getUser();
 
         return $this->render('comment/show.html.twig', [
@@ -66,15 +74,21 @@ class CommentController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="comment_edit", methods={"GET","POST"})
+     * @param Comment $comment
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
      */
-    public function edit(Request $request, Comment $comment): Response
+    public function edit(Comment $comment, Request $request, EntityManagerInterface $manager): Response
     {
+        dump($comment);
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
         {
-            $this->getDoctrine()->getManager()->flush();
+            $manager->persist($comment);
+            $manager->flush();
 
             return $this->redirectToRoute('comment_index');
         }

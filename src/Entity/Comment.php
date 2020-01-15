@@ -35,7 +35,7 @@ class Comment
     private $rate;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="comments", cascade={"persist"})
      */
     private $program;
 

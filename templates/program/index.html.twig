@@ -28,7 +28,10 @@
                 <td>{{ program.year }}</td>
                 <td>
                     <a href="{{ path('program_show', {'slug': program.slug}) }}">show</a>
-                    <a href="{{ path('program_edit', {'slug': program.slug}) }}">edit</a>
+
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('program_edit', {'slug': program.slug}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -39,5 +42,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('program_new') }}">Create new</a>
+    {% if is_granted("ROLE_ADMIN") %}
+        <a href="{{ path('program_new') }}">Create new</a>
+    {% endif %}
+
 {% endblock %}

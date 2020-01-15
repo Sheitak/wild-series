@@ -15,7 +15,7 @@ class CommentType extends AbstractType
             ->add('comment')
             ->add('rate')
             ->add('user', null, ['choice_label' => 'username'])
-            ->add('program', null, ['choice_label' => 'title', 'by_reference' => false,])
+            ->add('program', null, ['choice_label' => 'title'])
             ->add('episode', null, ['choice_label' => 'title'])
         ;
     }

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur le compte de {{ user.username }}</h1>
+
+    <a href="{{ path('wild_index') }}">back to index</a>
+{% endblock %}
