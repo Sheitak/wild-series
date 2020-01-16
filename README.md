@@ -24,6 +24,8 @@ Video Symfony 18 : https://www.loom.com/share/4b7c75198be74199b2c783ae087467ec
 
 Video Symfony 19 : https://www.loom.com/share/d0fe85464ce744d2b6b6689a56309c80
 
+Video Symfony 20 : https://www.loom.com/share/eaf792d435a74a369838b6ac581f2d47
+
 # Project installation
 
 ## 1. Configure your environment

@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\EpisodesRepository;
 use App\Repository\ProgramRepository;
 use App\Repository\SeasonRepository;
+use App\Repository\UserRepository;
 use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -176,16 +177,11 @@ Class WildController extends AbstractController
     }
 
     /**
-     * @Route("/myprofile/", name="myprofile")
-     * @param User $user
+     * @Route("/myprofile", name="myprofile")
      * @return Response
      */
-    public function myProfile(User $user):Response
+    public function myProfile():Response
     {
-        $profile = $user->getUser();
-
-        return $this->render('wild/myprofile.html.twig', [
-            'user' => $profile,
-        ]);
+        return $this->render('wild/myprofile.html.twig');
     }
 }
